@@ -47,5 +47,7 @@ int add_element(stack_t **inst, int n);
 void pall(stack_t **inst, unsigned int line_number);
 void (*opCode(char *token1))(stack_t **stack, unsigned int line_number);
 void pint(stack_t **inst, unsigned int line_number);
-
+void pop(stack_t **inst, unsigned int line_number);
+size_t dlistint_len(const stack_t *h);
+int delete_index(stack_t **head, unsigned int index);
 #endif
