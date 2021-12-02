@@ -52,4 +52,5 @@ void swap(stack_t **inst, unsigned int line_number);
 size_t dlistint_len(const stack_t *h);
 int delete_index(stack_t **head, unsigned int index);
 void _add(stack_t **inst, unsigned int line_number);
+void nop(stack_t **inst, unsigned int line_number);
 #endif
