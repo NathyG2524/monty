@@ -1,4 +1,4 @@
-#include "header.h"
+#include "monty.h"
 /**
  * opCode - function to select correct operation function
  * @token1: 1st bytecode input (opcode)
@@ -12,6 +12,7 @@ void (*opCode(char *token1))(stack_t **stack, unsigned int line_number)
         {"pint", pint},
 	{"pop", pop},
 	{"swap", swap},
+	{"add", _add},
         {NULL, NULL}
     };
 
