@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * @push - Pushes the element into the first position in a stack
+ * push - Pushes the element into the first position in a stack
  * @inst: Pointer to the head in the list
  * @line_number: bytcode line number
  * @n: Integer
@@ -25,7 +25,7 @@ void push(stack_t **inst, unsigned int line_number, const char *n)
 	}
 }
 /**
- * @pall - Prints values of a stack
+ * pall - Prints values of a stack
  * @inst:pointer to head of list
  * @line_number: line position of file content
  */
@@ -48,7 +48,7 @@ void pall(stack_t **inst, unsigned int line_number)
 
 }
 /**
- * @pint - prints elements of a list from top of stack
+ * pint - prints elements of a list from top of stack
  * @inst: pointer to head of stack
  * @line_number: line position count
  */
@@ -63,32 +63,38 @@ void pint(stack_t **inst, unsigned int line_number)
 
 }
 /**
- * @pint - prints elements of a list from top of stack
+ * pop - pop elements of a list from top of stack
  * @inst: pointer to head of stack
  * @line_number: line position count
  */
 
 void pop(stack_t **inst, unsigned int line_number)
 {
-    if (!inst || !*inst)
-    {
-        printf("L%u: can't pop an empty stack", line_number);
-        exit(EXIT_FAILURE);
-    }
-    else
-    {
-	    delete_index(inst, 0);
-    }
+	if (!inst || !*inst)
+	{
+		printf("L%u: can't pop an empty stack", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		delete_index(inst, 0);
+	}
 }
+/**
+ * swap - swap elements of a list from top of stack
+ * @inst: pointer to head of stack
+ * @line_number: line position count
+ */
+
 void swap(stack_t **inst, unsigned int line_number)
 {
-    int tmp;
-    
-    if (dlistint_len(*inst) < 2)
-    {
-	    printf("L%u: can't swap, stack", line_number);
-    }
-    tmp = (*inst)->n;
-    (*inst)->n = (*inst)->next->n;
-    (*inst)->next->n = tmp;
+	int tmp;
+
+	if (dlistint_len(*inst) < 2)
+	{
+		printf("L%u: can't swap, stack", line_number);
+	}
+	tmp = (*inst)->n;
+	(*inst)->n = (*inst)->next->n;
+	(*inst)->next->n = tmp;
 }
