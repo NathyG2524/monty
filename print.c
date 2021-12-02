@@ -80,3 +80,15 @@ void pop(stack_t **inst, unsigned int line_number)
 	    delete_index(inst, 0);
     }
 }
+void swap(stack_t **inst, unsigned int line_number)
+{
+    int tmp;
+    
+    if (dlistint_len(*inst) < 2)
+    {
+	    printf("L%u: can't swap, stack", line_number);
+    }
+    tmp = (*inst)->n;
+    (*inst)->n = (*inst)->next->n;
+    (*inst)->next->n = tmp;
+}
