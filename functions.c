@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * @is_number - checks if character is a string
+ * is_number - checks if character is a string
  *
  * @n: integer
- * @return: Always O
+ * Return: Always O
  */
 int is_number(const char *n)
 {
@@ -21,7 +21,7 @@ int is_number(const char *n)
 }
 
 /**
- * @free_dlist - frees a doubly linked list
+ * free_dlist - frees a doubly linked list
  *
  * @inst: pointer to head of list
  *
@@ -39,11 +39,11 @@ void free_dlist(stack_t **inst)
 	free(*inst);
 }
 /**
- * @add_element - Adds element to the front of a list
+ * add_element - Adds element to the front of a list
  *
  * @inst: Pointer to the head of a list
  * @n: Integer
- * @return: Always 0
+ * Return: Always 0
  */
 int add_element(stack_t **inst, int n)
 {
