@@ -11,7 +11,7 @@ void push(stack_t **inst, unsigned int line_number, const char *n)
 		return;
 	if (is_number(n) == -1)
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_dlist(inst);
 		exit(EXIT_FAILURE);
 	}
@@ -56,7 +56,7 @@ void pint(stack_t **inst, unsigned int line_number)
 {
 	if (!inst || !*inst)
 	{
-		printf("L%u: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*inst)->n);
@@ -72,7 +72,7 @@ void pop(stack_t **inst, unsigned int line_number)
 {
 	if (!inst || !*inst)
 	{
-		printf("L%u: can't pop an empty stack", line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack", line_number);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -92,7 +92,7 @@ void swap(stack_t **inst, unsigned int line_number)
 
 	if (dlistint_len(*inst) < 2)
 	{
-		printf("L%u: can't swap, stack", line_number);
+		fprintf(stderr, "L%u: can't swap, stack", line_number);
 	}
 	tmp = (*inst)->n;
 	(*inst)->n = (*inst)->next->n;

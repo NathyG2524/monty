@@ -9,7 +9,7 @@ void _add(stack_t **inst, unsigned int line_number)
 
 	if (dlistint_len(*inst) < 2)
 	{
-		printf("L%u: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	(*inst)->next->n += (*inst)->n;

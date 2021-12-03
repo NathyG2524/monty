@@ -55,7 +55,7 @@ int add_element(stack_t **inst, int n)
 	new = malloc(sizeof(struct stack_s));
 	if (!new)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed");
 		return (-1);
 	}
 	new->n = n;
