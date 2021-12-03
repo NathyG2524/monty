@@ -27,3 +27,39 @@ void nop(stack_t **inst, unsigned int line_number)
 	(void) inst;
 	(void) line_number;
 }
+/**
+ * _sub - adds nodes to the top of the list
+ * @inst: pointer to head of list
+ * @line_number: line count position
+ */
+void _sub(stack_t **inst, unsigned int line_number)
+{
+
+        if (dlistint_len(*inst) < 2)
+        {
+                fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+        (*inst)->next->n -= (*inst)->n;
+        (*inst) = (*inst)->next;
+        free((*inst)->prev);
+        (*inst)->prev = NULL;
+}
+/**
+ * _mul - adds nodes to the top of the list
+ * @inst: pointer to head of list
+ * @line_number: line count position
+ */
+void _mul(stack_t **inst, unsigned int line_number)
+{
+
+        if (dlistint_len(*inst) < 2)
+        {
+                fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+        (*inst)->next->n *= (*inst)->n;
+        (*inst) = (*inst)->next;
+        free((*inst)->prev);
+        (*inst)->prev = NULL;
+}
