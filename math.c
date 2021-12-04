@@ -79,9 +79,8 @@ void _div(stack_t **inst, unsigned int line_number)
 	if ((*inst)->n == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
-		cleaner();
 		exit(EXIT_FAILURE);
 	}
         (*inst)->next->n /= (*inst)->n;
-	delete_index(stack, 0);
+	delete_index(inst, 0);
 }

@@ -54,5 +54,6 @@ int delete_index(stack_t **head, unsigned int index);
 void _add(stack_t **inst, unsigned int line_number);
 void _mul(stack_t **inst, unsigned int line_number);
 void _sub(stack_t **inst, unsigned int line_number);
+void _div(stack_t **inst, unsigned int line_number);
 void nop(stack_t **inst, unsigned int line_number);
 #endif

@@ -14,6 +14,7 @@ void (*opCode(char *token1))(stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", _add},
 		{"sub", _sub},
+		{"div", _div},
 		{"mul", _mul},
 		{"nop", nop},
 		{NULL, NULL}
