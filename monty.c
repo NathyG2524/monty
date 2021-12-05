@@ -2,7 +2,6 @@
 
 int main(int argc, char *argv[])
 {
-	int cmd;
 	char *size, *token;
 	int line_count = 0;
 	stack_t *inst = NULL;
